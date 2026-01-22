@@ -48,6 +48,16 @@ Created linked connection with Azure SQL DB and ADLS Gen 2.
 - Used copy activity to migrate the data from the SQL DB to the data lake. In the source; because I wanted to migrate the whole tables, no specific table was selected.
 - Also created a json file to store a key value pair with time much earlier like 'col':1900-01-10'. This was to help in incremental data loading. Also an empty json file was created to be updated anytime the data was loaded.
 - Both these files were stored in the bronze layer.
+- In the copy activity select query and not table and write a query such as SELECT * FROM TBL WHERE COL > 1900-01-01
+- Stored the maximum value of the date loaded of the table script activity in json in the same json created.
+- Parameters created for the pipeline
+    1. schema
+    2. table
+    3. cdc_col
+
+   
+
+ - 
 
 
 
